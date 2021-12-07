@@ -1,0 +1,139 @@
+{
+  "accountId": "act_B-C-1ED34DK",
+  "contractId": "ctr_C-1ED34DY",
+  "groupId": "grp_178772",
+  "propertyId": "prp_652996",
+  "propertyVersion": 193,
+  "etag": "a4caf91fa41d630ce60b259d604df2a148cbcf75",
+  "ruleFormat": "latest",
+  "rules": {
+    "name": "default",
+    "behaviors": [
+      {
+        "name": "origin",
+        "options": {
+          "cacheKeyHostname": "REQUEST_HOST_HEADER",
+          "compress": true,
+          "enableTrueClientIp": false,
+          "forwardHostHeader": "ORIGIN_HOSTNAME",
+          "hostname": "romche.com",
+          "httpPort": 80,
+          "httpsPort": 443,
+          "originCertificate": "",
+          "originSni": true,
+          "originType": "CUSTOMER",
+          "ports": "",
+          "verificationMode": "PLATFORM_SETTINGS"
+        }
+      },
+      {
+        "name": "cpCode",
+        "options": {
+          "value": {
+            "cpCodeLimits": null,
+            "createdDate": 1601539639000,
+            "description": "config-rapid-dj.xml",
+            "id": 1096058,
+            "name": "config-rapid-dj.xml",
+            "products": [
+              "SPM"
+            ]
+          }
+        }
+      },
+      {
+        "name": "allowPost",
+        "options": {
+          "allowWithoutContentLength": true,
+          "enabled": true
+        }
+      },
+      {
+        "name": "realUserMonitoring",
+        "options": {
+          "enabled": true
+        }
+      },
+      {
+        "name": "setVariable",
+        "options": {
+          "extractLocation": "CLIENT_REQUEST_HEADER",
+          "headerName": "api-key",
+          "transform": "NONE",
+          "valueSource": "EXTRACT",
+          "variableName": "PMUSER_API_KEY_VALUE"
+        }
+      },
+      {
+        "name": "rapid",
+        "options": {
+          "enabled": false
+        }
+      },
+      {
+        "name": "globalRequestNumber",
+        "options": {
+          "headerName": "Akamai-GRN",
+          "outputOption": "REQUEST_HEADER"
+        }
+      },
+      {
+        "name": "edgeRedirector",
+        "options": {
+          "enabled": false
+        }
+      },
+      {
+        "name": "cachePost",
+        "options": {
+          "enabled": true,
+          "useBody": "MD5"
+        }
+      }
+    ],
+    "children": [
+      "#include:Offload_origin.json",
+      "#include:Minimize_payload.json",
+      "#include:Test.json"
+    ],
+    "comments": "The Default Rule template contains all the necessary and recommended behaviors. Rules are evaluated from top to bottom and the last matching rule wins.",
+    "variables": [
+      {
+        "name": "PMUSER_API_KEY_VALUE",
+        "value": "",
+        "description": "",
+        "hidden": false,
+        "sensitive": false
+      },
+      {
+        "name": "PMUSER_KEY_HEADER",
+        "value": "key_header",
+        "description": "",
+        "hidden": false,
+        "sensitive": false
+      },
+      {
+        "name": "PMUSER_UUID_FINAL",
+        "value": "",
+        "description": "Variable to hold UUID value",
+        "hidden": false,
+        "sensitive": false
+      },
+      {
+        "name": "PMUSER_API_TEST",
+        "value": "",
+        "description": "",
+        "hidden": false,
+        "sensitive": false
+      },
+      {
+        "name": "PMUSER_REQ_TEST",
+        "value": "",
+        "description": "",
+        "hidden": false,
+        "sensitive": false
+      }
+    ],
+    "options": {}
+  }
+}
