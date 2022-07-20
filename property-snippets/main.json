@@ -1,11 +1,4 @@
 {
-  "accountId": "act_B-C-1ED34DK",
-  "contractId": "ctr_C-1ED34DY",
-  "groupId": "grp_178772",
-  "propertyId": "prp_652996",
-  "propertyVersion": 193,
-  "etag": "a4caf91fa41d630ce60b259d604df2a148cbcf75",
-  "ruleFormat": "latest",
   "rules": {
     "name": "default",
     "behaviors": [
